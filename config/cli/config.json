@@ -31,6 +31,8 @@
         "minPlaytime": 60,
         "excludeBanned": true,
         "excludeOps": false,
-        "excludeUUIDs": []
+        "excludeUUIDs": [],
+        "excludeNamePrefixes": [],
+        "excludeNameSuffixes": []
     }
 }

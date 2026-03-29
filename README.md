@@ -143,6 +143,10 @@ The following setting is **required for the CLI**:
   
 * **`worldName`**: the name of the world on the server that contains the player statistics (i.e., the `stats` directory with JSON files in it). In most cases, this is simply `world`.
 
+* **`statsPath`** (optional): The path to the `stats` directory relative to the world directory. If not specified, it is assumed to be `stats`.
+
+* **`advancementsPath`** (optional): The path to the `advancements` directory relative to the world directory. If not specified, it is assumed to be `advancements`.
+
 ### Usage
 
 This section describes the everyday use of *MinecraftStats*.

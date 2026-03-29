@@ -43,6 +43,8 @@ public class BukkitConfig extends Config {
         setExcludeOps(bukkitConfig.getBoolean("players.excludeOps", isExcludeOps()));
         
         getExcludeUUIDs().addAll(bukkitConfig.getStringList("players.excludeUUIDs"));
+        getExcludeNamePrefixes().addAll(bukkitConfig.getStringList("players.excludeNamePrefixes"));
+        getExcludeNameSuffixes().addAll(bukkitConfig.getStringList("players.excludeNameSuffixes"));
 
         setBronzeMedalWeight(bukkitConfig.getInt("crown.bronze", getBronzeMedalWeight()));
         setSilverMedalWeight(bukkitConfig.getInt("crown.silver", getSilverMedalWeight()));

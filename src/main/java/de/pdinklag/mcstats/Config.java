@@ -22,6 +22,8 @@ public class Config {
     private boolean excludeBanned = true;
     private boolean excludeOps = false;
     private final ArrayList<String> excludeUUIDs = new ArrayList<>();
+    private final ArrayList<String> excludeNamePrefixes = new ArrayList<>();
+    private final ArrayList<String> excludeNameSuffixes = new ArrayList<>();
 
     private int bronzeMedalWeight = 1;
     private int silverMedalWeight = 2;
@@ -88,6 +90,14 @@ public class Config {
 
     public ArrayList<String> getExcludeUUIDs() {
         return excludeUUIDs;
+    }
+
+    public ArrayList<String> getExcludeNamePrefixes() {
+        return excludeNamePrefixes;
+    }
+
+    public ArrayList<String> getExcludeNameSuffixes() {
+        return excludeNameSuffixes;
     }
 
     public int getProfileUpdateInterval() {

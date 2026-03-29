@@ -23,3 +23,5 @@ players:
   excludeBanned: true
   excludeOps: false
   excludeUUIDs: []
+  excludeNamePrefixes: []
+  excludeNameSuffixes: []

@@ -31,9 +31,13 @@ public class JSONConfig extends Config {
             final JSONArray sources = server.getJSONArray("sources");
             for (int i = 0; i < sources.length(); i++) {
                 JSONObject source = sources.getJSONObject(i);
+                String statsPath = source.optString("statsPath", null);
+                String advancementsPath = source.optString("advancementsPath", null);
                 getDataSources().add(new FileSystemDataSource(
                         Path.of(source.getString("path")),
-                        source.getString("worldName")));
+                        source.getString("worldName"),
+                        statsPath,
+                        advancementsPath));
             }
         }
 
@@ -52,6 +56,20 @@ public class JSONConfig extends Config {
             if (excludeUUIDs != null) {
                 for (int i = 0; i < excludeUUIDs.length(); i++) {
                     getExcludeUUIDs().add(excludeUUIDs.getString(i));
+                }
+            }
+
+            final JSONArray excludeNamePrefixes = players.optJSONArray("excludeNamePrefixes");
+            if (excludeNamePrefixes != null) {
+                for (int i = 0; i < excludeNamePrefixes.length(); i++) {
+                    getExcludeNamePrefixes().add(excludeNamePrefixes.getString(i));
+                }
+            }
+
+            final JSONArray excludeNameSuffixes = players.optJSONArray("excludeNameSuffixes");
+            if (excludeNameSuffixes != null) {
+                for (int i = 0; i < excludeNameSuffixes.length(); i++) {
+                    getExcludeNameSuffixes().add(excludeNameSuffixes.getString(i));
                 }
             }
         }

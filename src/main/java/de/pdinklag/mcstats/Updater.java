@@ -139,6 +139,14 @@ public abstract class Updater {
             filter.excludeAll(config.getExcludeUUIDs());
             filters.add(filter);
         }
+
+        // filter players by name prefix or suffix
+        if (!config.getExcludeNamePrefixes().isEmpty() || !config.getExcludeNameSuffixes().isEmpty()) {
+            PlayerNamePatternFilter filter = new PlayerNamePatternFilter();
+            filter.addAllPrefixes(config.getExcludeNamePrefixes());
+            filter.addAllSuffixes(config.getExcludeNameSuffixes());
+            filters.add(filter);
+        }
         return filters;
     }
 
